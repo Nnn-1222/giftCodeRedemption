@@ -44,6 +44,7 @@ with open("playerIDs.txt", "r", encoding="utf-8") as file:
 
 options = webdriver.ChromeOptions()
 # options.add_argument('--headless') # Uncomment this line to run in headless mode
+options.add_argument('--lang=en-US')
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 wait = WebDriverWait(driver, 10)
@@ -105,3 +106,4 @@ log_print(f"\nProcessed {count} players in {end_time - start_time:.2f} seconds."
 print(f"\nProcessed {count} players in {end_time - start_time:.2f} seconds.")
 
 driver.quit()
+
